@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7bfe170495b047a2ad21038e48af105c" Name="Diagram1">
+        <EntityTypeShape EntityType="management_dbModel.Accusation" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="management_dbModel.Erea" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="management_dbModel.Prisoner" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="management_dbModel.Punishment" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="management_dbModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="management_dbModel.User" Width="1.5" PointX="2.75" PointY="7.25" IsExpanded="true" />
+        <AssociationConnector Association="management_dbModel.FK_Prisoner_Accusation" ManuallyRouted="false" />
+        <AssociationConnector Association="management_dbModel.FK_Prisoner_Erea" ManuallyRouted="false" />
+        <AssociationConnector Association="management_dbModel.FK_Prisoner_Punishment" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

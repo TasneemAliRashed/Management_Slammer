@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="management_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Accusation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Erea">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Prisoner">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Age" Type="int" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="15" />
+          <Property Name="Phone" Type="int" />
+          <Property Name="Erea" Type="int" />
+          <Property Name="Accusation" Type="int" />
+          <Property Name="Date_Of_Enter" Type="datetime" />
+          <Property Name="Judgement" Type="nvarchar" MaxLength="50" />
+          <Property Name="Punshment" Type="int" />
+          <Property Name="Date_Of_Out" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Punishment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="int" />
+          <Property Name="PassWord" Type="nvarchar" MaxLength="50" />
+          <Property Name="LoginName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Prisoner_Accusation">
+          <End Role="Accusation" Type="Self.Accusation" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Prisoner" Type="Self.Prisoner" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accusation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Prisoner">
+              <PropertyRef Name="Accusation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prisoner_Erea">
+          <End Role="Erea" Type="Self.Erea" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Prisoner" Type="Self.Prisoner" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Erea">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Prisoner">
+              <PropertyRef Name="Erea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prisoner_Punishment">
+          <End Role="Punishment" Type="Self.Punishment" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Prisoner" Type="Self.Prisoner" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Punishment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Prisoner">
+              <PropertyRef Name="Punshment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="management_dbModelStoreContainer">
+          <EntitySet Name="Accusation" EntityType="Self.Accusation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Erea" EntityType="Self.Erea" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prisoner" EntityType="Self.Prisoner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Punishment" EntityType="Self.Punishment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Prisoner_Accusation" Association="Self.FK_Prisoner_Accusation">
+            <End Role="Accusation" EntitySet="Accusation" />
+            <End Role="Prisoner" EntitySet="Prisoner" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prisoner_Erea" Association="Self.FK_Prisoner_Erea">
+            <End Role="Erea" EntitySet="Erea" />
+            <End Role="Prisoner" EntitySet="Prisoner" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prisoner_Punishment" Association="Self.FK_Prisoner_Punishment">
+            <End Role="Punishment" EntitySet="Punishment" />
+            <End Role="Prisoner" EntitySet="Prisoner" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="management_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Accusation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Prisoner" Relationship="Self.FK_Prisoner_Accusation" FromRole="Accusation" ToRole="Prisoner" />
+        </EntityType>
+        <EntityType Name="Erea">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Prisoner" Relationship="Self.FK_Prisoner_Erea" FromRole="Erea" ToRole="Prisoner" />
+        </EntityType>
+        <EntityType Name="Prisoner">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="Sex" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="Int32" />
+          <Property Name="Erea" Type="Int32" />
+          <Property Name="Accusation" Type="Int32" />
+          <Property Name="Date_Of_Enter" Type="DateTime" Precision="3" />
+          <Property Name="Judgement" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Punshment" Type="Int32" />
+          <Property Name="Date_Of_Out" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Accusation1" Relationship="Self.FK_Prisoner_Accusation" FromRole="Prisoner" ToRole="Accusation" />
+          <NavigationProperty Name="Erea1" Relationship="Self.FK_Prisoner_Erea" FromRole="Prisoner" ToRole="Erea" />
+          <NavigationProperty Name="Punishment" Relationship="Self.FK_Prisoner_Punishment" FromRole="Prisoner" ToRole="Punishment" />
+        </EntityType>
+        <EntityType Name="Punishment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Prisoner" Relationship="Self.FK_Prisoner_Punishment" FromRole="Punishment" ToRole="Prisoner" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="Int32" />
+          <Property Name="PassWord" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LoginName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_Prisoner_Accusation">
+          <End Role="Accusation" Type="Self.Accusation" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Prisoner" Type="Self.Prisoner" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accusation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Prisoner">
+              <PropertyRef Name="Accusation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prisoner_Erea">
+          <End Role="Erea" Type="Self.Erea" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Prisoner" Type="Self.Prisoner" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Erea">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Prisoner">
+              <PropertyRef Name="Erea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prisoner_Punishment">
+          <End Role="Punishment" Type="Self.Punishment" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Prisoner" Type="Self.Prisoner" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Punishment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Prisoner">
+              <PropertyRef Name="Punshment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="management_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accusation" EntityType="Self.Accusation" />
+          <EntitySet Name="Erea" EntityType="Self.Erea" />
+          <EntitySet Name="Prisoner" EntityType="Self.Prisoner" />
+          <EntitySet Name="Punishment" EntityType="Self.Punishment" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <AssociationSet Name="FK_Prisoner_Accusation" Association="Self.FK_Prisoner_Accusation">
+            <End Role="Accusation" EntitySet="Accusation" />
+            <End Role="Prisoner" EntitySet="Prisoner" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prisoner_Erea" Association="Self.FK_Prisoner_Erea">
+            <End Role="Erea" EntitySet="Erea" />
+            <End Role="Prisoner" EntitySet="Prisoner" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prisoner_Punishment" Association="Self.FK_Prisoner_Punishment">
+            <End Role="Punishment" EntitySet="Punishment" />
+            <End Role="Prisoner" EntitySet="Prisoner" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="management_dbModelStoreContainer" CdmEntityContainer="management_dbEntities">
+          <EntitySetMapping Name="Accusation">
+            <EntityTypeMapping TypeName="management_dbModel.Accusation">
+              <MappingFragment StoreEntitySet="Accusation">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Erea">
+            <EntityTypeMapping TypeName="management_dbModel.Erea">
+              <MappingFragment StoreEntitySet="Erea">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prisoner">
+            <EntityTypeMapping TypeName="management_dbModel.Prisoner">
+              <MappingFragment StoreEntitySet="Prisoner">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Erea" ColumnName="Erea" />
+                <ScalarProperty Name="Accusation" ColumnName="Accusation" />
+                <ScalarProperty Name="Date_Of_Enter" ColumnName="Date_Of_Enter" />
+                <ScalarProperty Name="Judgement" ColumnName="Judgement" />
+                <ScalarProperty Name="Punshment" ColumnName="Punshment" />
+                <ScalarProperty Name="Date_Of_Out" ColumnName="Date_Of_Out" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Punishment">
+            <EntityTypeMapping TypeName="management_dbModel.Punishment">
+              <MappingFragment StoreEntitySet="Punishment">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="management_dbModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="management_dbModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+                <ScalarProperty Name="LoginName" ColumnName="LoginName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

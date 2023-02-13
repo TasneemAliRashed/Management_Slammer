@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5DDEA117-D177-4100-B9AF-7B202030899F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Management_Slammer</RootNamespace>
+    <AssemblyName>Management_Slammer</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Add_Accusation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Accusation.Designer.cs">
+      <DependentUpon>Add_Accusation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Erea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Erea.Designer.cs">
+      <DependentUpon>Add_Erea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Punishment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Punishment.Designer.cs">
+      <DependentUpon>Add_Punishment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Slammer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Slammer.Designer.cs">
+      <DependentUpon>Add_Slammer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_User.Designer.cs">
+      <DependentUpon>Add_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Create_Backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Create_Backup.Designer.cs">
+      <DependentUpon>Create_Backup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Accusation.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Erea.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Prisoner.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Punishment.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\User.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Restore_Backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Restore_Backup.Designer.cs">
+      <DependentUpon>Restore_Backup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Show_Accusation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Show_Accusation.Designer.cs">
+      <DependentUpon>Show_Accusation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Show_Erea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Show_Erea.Designer.cs">
+      <DependentUpon>Show_Erea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Show_Punishment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Show_Punishment.Designer.cs">
+      <DependentUpon>Show_Punishment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Show_Slammer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Show_Slammer.Designer.cs">
+      <DependentUpon>Show_Slammer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Show_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Show_User.Designer.cs">
+      <DependentUpon>Show_User.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Add_Accusation.resx">
+      <DependentUpon>Add_Accusation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_Erea.resx">
+      <DependentUpon>Add_Erea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_Punishment.resx">
+      <DependentUpon>Add_Punishment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_Slammer.resx">
+      <DependentUpon>Add_Slammer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_User.resx">
+      <DependentUpon>Add_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Create_Backup.resx">
+      <DependentUpon>Create_Backup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Restore_Backup.resx">
+      <DependentUpon>Restore_Backup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Show_Accusation.resx">
+      <DependentUpon>Show_Accusation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Show_Erea.resx">
+      <DependentUpon>Show_Erea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Show_Punishment.resx">
+      <DependentUpon>Show_Punishment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Show_Slammer.resx">
+      <DependentUpon>Show_Slammer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Show_User.resx">
+      <DependentUpon>Show_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\lok.png" />
+    <None Include="Resources\Untitled-1.png" />
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
