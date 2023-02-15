@@ -380,6 +380,7 @@
             this.btnSereach.Size = new System.Drawing.Size(1117, 588);
             this.btnSereach.TabIndex = 1;
             this.btnSereach.TabStop = false;
+            this.btnSereach.Enter += new System.EventHandler(this.btnSereach_Enter);
             // 
             // groupBox9
             // 
@@ -411,6 +412,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "بحث";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnUpdate
             // 
@@ -420,6 +422,7 @@
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "تعديل";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // Show_Slammer
             // 
@@ -434,6 +437,7 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "عرض بيانات السجناء";
+            this.Load += new System.EventHandler(this.Show_Slammer_Load);
             this.groupBox7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox6.ResumeLayout(false);
