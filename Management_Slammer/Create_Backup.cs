@@ -16,5 +16,20 @@ namespace Management_Slammer
         {
             InitializeComponent();
         }
+
+        private void btncreate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEnd_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnbrows_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

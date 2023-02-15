@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,13 @@ namespace Management_Slammer
 {
     public partial class Add_Slammer : Form
     {
+       
+
         public Add_Slammer()
         {
             InitializeComponent();
+           
+
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -29,7 +34,11 @@ namespace Management_Slammer
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            txtAge.Text = txtName.Text = txtPhone.Text = comErea.Text = comPunshment.Text = conAccusation.Text = Date_Of_Enter.Text = Date_Of_Out.Text = null;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

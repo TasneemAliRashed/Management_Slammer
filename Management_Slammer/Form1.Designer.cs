@@ -58,6 +58,7 @@
             this.بياناتالسجناءالذينلمتمتمحاكمتهمToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.بياناتالسجناءحسبتاريخالخروجToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.skinEngine1 = new Sunisoft.IrisSkin.SkinEngine(((System.ComponentModel.Component)(this)));
             this.MenuStrip1.SuspendLayout();
             this.GroupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -89,14 +90,14 @@
             // عرضبياناتالمستخدمينToolStripMenuItem
             // 
             this.عرضبياناتالمستخدمينToolStripMenuItem.Name = "عرضبياناتالمستخدمينToolStripMenuItem";
-            this.عرضبياناتالمستخدمينToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.عرضبياناتالمستخدمينToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.عرضبياناتالمستخدمينToolStripMenuItem.Text = "عرض بيانات التهم";
             this.عرضبياناتالمستخدمينToolStripMenuItem.Click += new System.EventHandler(this.عرضبياناتالمستخدمينToolStripMenuItem_Click);
             // 
             // إضافةمستخدمToolStripMenuItem
             // 
             this.إضافةمستخدمToolStripMenuItem.Name = "إضافةمستخدمToolStripMenuItem";
-            this.إضافةمستخدمToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.إضافةمستخدمToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.إضافةمستخدمToolStripMenuItem.Text = "إضافة تهمة";
             this.إضافةمستخدمToolStripMenuItem.Click += new System.EventHandler(this.إضافةمستخدمToolStripMenuItem_Click);
             // 
@@ -112,14 +113,14 @@
             // عرضبياناتالمناطقToolStripMenuItem
             // 
             this.عرضبياناتالمناطقToolStripMenuItem.Name = "عرضبياناتالمناطقToolStripMenuItem";
-            this.عرضبياناتالمناطقToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.عرضبياناتالمناطقToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.عرضبياناتالمناطقToolStripMenuItem.Text = "عرض بيانات المناطق";
             this.عرضبياناتالمناطقToolStripMenuItem.Click += new System.EventHandler(this.عرضبياناتالمناطقToolStripMenuItem_Click);
             // 
             // إضافةمنطقةToolStripMenuItem
             // 
             this.إضافةمنطقةToolStripMenuItem.Name = "إضافةمنطقةToolStripMenuItem";
-            this.إضافةمنطقةToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.إضافةمنطقةToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.إضافةمنطقةToolStripMenuItem.Text = "إضافة منطقة";
             this.إضافةمنطقةToolStripMenuItem.Click += new System.EventHandler(this.إضافةمنطقةToolStripMenuItem_Click);
             // 
@@ -135,14 +136,14 @@
             // عرضبياناتالسجناءToolStripMenuItem
             // 
             this.عرضبياناتالسجناءToolStripMenuItem.Name = "عرضبياناتالسجناءToolStripMenuItem";
-            this.عرضبياناتالسجناءToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.عرضبياناتالسجناءToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.عرضبياناتالسجناءToolStripMenuItem.Text = "عرض بيانات السجناء";
             this.عرضبياناتالسجناءToolStripMenuItem.Click += new System.EventHandler(this.عرضبياناتالسجناءToolStripMenuItem_Click);
             // 
             // إضافةسجينToolStripMenuItem
             // 
             this.إضافةسجينToolStripMenuItem.Name = "إضافةسجينToolStripMenuItem";
-            this.إضافةسجينToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.إضافةسجينToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.إضافةسجينToolStripMenuItem.Text = "إضافة سجين";
             this.إضافةسجينToolStripMenuItem.Click += new System.EventHandler(this.إضافةسجينToolStripMenuItem_Click);
             // 
@@ -303,6 +304,13 @@
             this.GroupBox1.TabIndex = 1;
             this.GroupBox1.TabStop = false;
             // 
+            // skinEngine1
+            // 
+            this.skinEngine1.DisabledMenuFontColor = System.Drawing.SystemColors.GrayText;
+            this.skinEngine1.InactiveCaptionColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.skinEngine1.SerialNumber = "";
+            this.skinEngine1.SkinFile = null;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -354,6 +362,7 @@
         private System.Windows.Forms.ToolStripMenuItem عرضبياناتالمستخدمينToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem إضافةعقوبهToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem عرضبياناتالعقوباتToolStripMenuItem;
+        private Sunisoft.IrisSkin.SkinEngine skinEngine1;
     }
 }
 

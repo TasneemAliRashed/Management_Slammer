@@ -15,6 +15,7 @@ namespace Management_Slammer
         public Form1()
         {
             InitializeComponent();
+            skinEngine1.SkinFile= "GlassBrown.ssk";
         }
 
         private void التقاريرToolStripMenuItem_Click(object sender, EventArgs e)

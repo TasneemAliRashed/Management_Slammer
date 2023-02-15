@@ -84,7 +84,7 @@
             this.btnDelete.TabIndex = 0;
             this.btnDelete.Text = "حذف";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+          
             // 
             // txtPhone
             // 
@@ -401,7 +401,7 @@
             this.btnNew.TabIndex = 3;
             this.btnNew.Text = "جديد";
             this.btnNew.UseVisualStyleBackColor = true;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+           
             // 
             // button3
             // 
@@ -411,6 +411,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "بحث";
             this.button3.UseVisualStyleBackColor = true;
+         
             // 
             // btnUpdate
             // 

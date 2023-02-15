@@ -15,9 +15,9 @@ namespace Management_Slammer
        
     {
         management_dbEntities db = new management_dbEntities();
-        public Show_User()
+
+        public void show()
         {
-            InitializeComponent();
             dataGridView1.DataSource = (from cat in db.User
                                         select new
                                         {
@@ -27,6 +27,12 @@ namespace Management_Slammer
                                             cat.LoginName,
                                             cat.PassWord
                                         }).ToList();
+        }
+        public Show_User()
+        {
+            InitializeComponent();
+            show();
+           
         }
 
         private void Show_User_Load(object sender, EventArgs e)
@@ -52,6 +58,7 @@ namespace Management_Slammer
                     db.Entry(user).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
                     MessageBox.Show("تمت التعديل بنجاح", "تعديل", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    show();
                 }
             }
             catch
@@ -72,6 +79,7 @@ namespace Management_Slammer
                     db.User.Remove(user);
                     db.SaveChanges();
                     MessageBox.Show("تمت الحذف بنجاح", "حذف", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    show();
                 }
                 else
                 {
@@ -103,6 +111,7 @@ namespace Management_Slammer
                     txtPhone.Text = ss.Phone.ToString();
                     txtUser_Name.Text = ss.LoginName;
                     txtPassword.Text = ss.PassWord;
+
 
 
                 }

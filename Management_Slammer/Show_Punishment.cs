@@ -14,15 +14,19 @@ namespace Management_Slammer
     public partial class Show_Punishment : Form
     {
         management_dbEntities db = new management_dbEntities();
-        public Show_Punishment()
+        public void show()
         {
-            InitializeComponent();
             dataGridView1.DataSource = (from cat in db.Punishment
                                         select new
                                         {
                                             cat.Id,
                                             cat.Name,
                                         }).ToList();
+        }
+        public Show_Punishment()
+        {
+            InitializeComponent();
+            show();
         }
 
         private void Show_Punishment_Load(object sender, EventArgs e)
@@ -67,6 +71,8 @@ namespace Management_Slammer
                     db.Entry(punishment).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
                     MessageBox.Show("تمت التعديل بنجاح", "تعديل", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    show();
+
                 }
             }
             catch
@@ -87,6 +93,7 @@ namespace Management_Slammer
                     db.Punishment.Remove(punishment);
                     db.SaveChanges();
                     MessageBox.Show("تمت الحذف بنجاح", "حذف", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    show();
                 }
                 else
                 {
