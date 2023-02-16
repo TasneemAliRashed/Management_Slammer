@@ -38,6 +38,7 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.Date_Of_Out = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
+            this.comPunshment = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -60,7 +61,6 @@
             this.txtAge = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comPunshment = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -114,7 +114,6 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "إضافة";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // groupBox8
             // 
@@ -144,9 +143,9 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.comPunshment);
             this.groupBox7.Controls.Add(this.Date_Of_Out);
             this.groupBox7.Controls.Add(this.label10);
+            this.groupBox7.Controls.Add(this.comPunshment);
             this.groupBox7.Controls.Add(this.label9);
             this.groupBox7.Location = new System.Drawing.Point(6, 318);
             this.groupBox7.Name = "groupBox7";
@@ -168,6 +167,14 @@
             this.label10.Size = new System.Drawing.Size(64, 29);
             this.label10.TabIndex = 9;
             this.label10.Text = "العقوبة";
+            // 
+            // comPunshment
+            // 
+            this.comPunshment.FormattingEnabled = true;
+            this.comPunshment.Location = new System.Drawing.Point(426, 21);
+            this.comPunshment.Name = "comPunshment";
+            this.comPunshment.Size = new System.Drawing.Size(121, 27);
+            this.comPunshment.TabIndex = 12;
             // 
             // label9
             // 
@@ -373,14 +380,6 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "العمر";
             // 
-            // comPunshment
-            // 
-            this.comPunshment.FormattingEnabled = true;
-            this.comPunshment.Location = new System.Drawing.Point(437, 19);
-            this.comPunshment.Name = "comPunshment";
-            this.comPunshment.Size = new System.Drawing.Size(121, 27);
-            this.comPunshment.TabIndex = 16;
-            // 
             // Add_Slammer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -394,7 +393,6 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "إضافة سجين";
-            this.Load += new System.EventHandler(this.Add_Slammer_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
@@ -421,6 +419,7 @@
         private System.Windows.Forms.RadioButton rMale;
         private System.Windows.Forms.RadioButton rFimale;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comPunshment;
         private System.Windows.Forms.ComboBox conAccusation;
         private System.Windows.Forms.ComboBox comErea;
         private System.Windows.Forms.Label label10;
@@ -446,6 +445,5 @@
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.ComboBox comPunshment;
     }
 }

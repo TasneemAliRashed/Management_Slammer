@@ -44,6 +44,7 @@ namespace Management_Slammer
         private void btnNew_Click(object sender, EventArgs e)
         {
             txtName.Text = null;
+            txtName.Focus();
         }
     }
 }

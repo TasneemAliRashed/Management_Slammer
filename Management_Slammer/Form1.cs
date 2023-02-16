@@ -15,7 +15,8 @@ namespace Management_Slammer
         public Form1()
         {
             InitializeComponent();
-            skinEngine1.SkinFile= "GlassBrown.ssk";
+            //Calmness  DiamondBlue  Emerald  XPBlue GlassBrown
+            skinEngine1.SkinFile= "Emerald.ssk";
         }
 
         private void التقاريرToolStripMenuItem_Click(object sender, EventArgs e)
