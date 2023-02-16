@@ -116,5 +116,10 @@ namespace Management_Slammer
             Show_Punishment show_Punishment = new Show_Punishment();
             show_Punishment.ShowDialog();
         }
+
+        private void السجناءToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

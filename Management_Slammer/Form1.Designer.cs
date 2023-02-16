@@ -136,14 +136,14 @@
             // عرضبياناتالسجناءToolStripMenuItem
             // 
             this.عرضبياناتالسجناءToolStripMenuItem.Name = "عرضبياناتالسجناءToolStripMenuItem";
-            this.عرضبياناتالسجناءToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.عرضبياناتالسجناءToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.عرضبياناتالسجناءToolStripMenuItem.Text = "عرض بيانات السجناء";
             this.عرضبياناتالسجناءToolStripMenuItem.Click += new System.EventHandler(this.عرضبياناتالسجناءToolStripMenuItem_Click);
             // 
             // إضافةسجينToolStripMenuItem
             // 
             this.إضافةسجينToolStripMenuItem.Name = "إضافةسجينToolStripMenuItem";
-            this.إضافةسجينToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.إضافةسجينToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.إضافةسجينToolStripMenuItem.Text = "إضافة سجين";
             this.إضافةسجينToolStripMenuItem.Click += new System.EventHandler(this.إضافةسجينToolStripMenuItem_Click);
             // 
@@ -155,6 +155,7 @@
             this.السجناءToolStripMenuItem.Name = "السجناءToolStripMenuItem";
             this.السجناءToolStripMenuItem.Size = new System.Drawing.Size(112, 20);
             this.السجناءToolStripMenuItem.Text = "إدارة بيانات السجناء";
+            this.السجناءToolStripMenuItem.Click += new System.EventHandler(this.السجناءToolStripMenuItem_Click);
             // 
             // تسجيلالخروجToolStripMenuItem
             // 
